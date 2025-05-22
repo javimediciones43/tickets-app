@@ -2,27 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Provincia;
+use App\Models\Ticket;
 use Illuminate\Http\Request;
 
-class ProvinciaController extends Controller
+class TicketController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //$provincias = Provincia::all();
-        //return response()->json($provincias);
-        /* $provinciasMapeadas = provincias->map(function ($provincia) {
-            return [
-                'id' => $provincia->id,
-                'nombre' => $provincia->nombre
-            ];
-        });
-        return response()->json($provinciasMapeadas); */
-        $provincias = Provincia::select('id', 'nombre')->get();
-        return response()->json($provincias);
+        //
     }
 
     /**
@@ -44,7 +34,7 @@ class ProvinciaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Provincia $provincia)
+    public function show(Ticket $ticket)
     {
         //
     }
@@ -52,7 +42,7 @@ class ProvinciaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Provincia $provincia)
+    public function edit(Ticket $ticket)
     {
         //
     }
@@ -60,7 +50,7 @@ class ProvinciaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Provincia $provincia)
+    public function update(Request $request, Ticket $ticket)
     {
         //
     }
@@ -68,7 +58,7 @@ class ProvinciaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Provincia $provincia)
+    public function destroy(Ticket $ticket)
     {
         //
     }
