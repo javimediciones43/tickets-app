@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ticket;
+use App\Models\EstadoTicket;
 use Illuminate\Http\Request;
 
-class TicketController extends Controller
+class EstadoTicketController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class TicketController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -28,18 +28,13 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        $tickets = Ticket::create([
-            'nombre'=> $request-> nombre,
-            'descripcion'=> $request-> descripcion,
-            'provincia_id'=> $request-> provincia_id,
-        ]);
-        return response()->json($tickets);
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Ticket $ticket)
+    public function show(EstadoTicket $estadoTicket)
     {
         //
     }
@@ -47,7 +42,7 @@ class TicketController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Ticket $ticket)
+    public function edit(EstadoTicket $estadoTicket)
     {
         //
     }
@@ -55,7 +50,7 @@ class TicketController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Ticket $ticket)
+    public function update(Request $request, EstadoTicket $estadoTicket)
     {
         //
     }
@@ -63,7 +58,7 @@ class TicketController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Ticket $ticket)
+    public function destroy(EstadoTicket $estadoTicket)
     {
         //
     }
