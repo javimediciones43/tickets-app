@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreign('provincia_id')->references('id')->on('provincias');
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      */

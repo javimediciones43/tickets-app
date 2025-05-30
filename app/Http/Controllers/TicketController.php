@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Provincia;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 
@@ -57,9 +58,14 @@ class TicketController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Ticket $ticket)
+    public function update(Request $request, int $id)
     {
-        //
+        $tickets = Ticket::find($id);
+        $tickets->nombre = $request->nombre;
+        $tickets->descripcion = $request->descripcion;
+        $tickets->provincia_id = $request->provincia_id;
+        $tickets->save();
+        return response()->json($tickets);
     }
 
     /**
@@ -70,5 +76,11 @@ class TicketController extends Controller
         $tickets = Ticket::find($id);
         $tickets->delete();
 
+    }
+
+    public function getProvinciaTickets($id)
+    {
+        $provincia = Provincia::with('tickets')->find($id);
+        return response()->json($provincia);
     }
 }
