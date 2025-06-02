@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTicketRequest;
 use App\Models\Provincia;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
@@ -28,12 +29,12 @@ class TicketController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreTicketRequest $request)
     {
         $tickets = Ticket::create([
-            'nombre'=> $request-> nombre,
-            'descripcion'=> $request-> descripcion,
-            'provincia_id'=> $request-> provincia_id,
+            'nombre'=> $request-> validated('nombre'),
+            'descripcion'=> $request-> validated('descripcion'),
+            'provincia_id'=> $request-> validated('provincia_id'),
         ]);
         return response()->json($tickets);
     }
